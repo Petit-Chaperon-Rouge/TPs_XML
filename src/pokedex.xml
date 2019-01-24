@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<!--
+<!DOCTYPE pokedex [
+        <!ELEMENT pokedex (pokemon*)>
+        <!ATTLIST pokemon numero CDATA #REQUIRED>
+        <!ELEMENT pokemon (nom, poids, tailles, types, img, description)>
+        <!ELEMENT nom (#PCDATA)>
+        <!ATTLIST poids unite (kg) #REQUIRED>
+        <!ELEMENT poids (#PCDATA)>
+        <!ELEMENT tailles (taille+)>
+            <!ATTLIST taille unite (m|foot) #REQUIRED>
+            <!ELEMENT taille (#PCDATA)>
+        <!ELEMENT types (type+)>
+            <!ELEMENT type (#PCDATA)>
+        <!ELEMENT img (#PCDATA)>
+        <!ATTLIST img src CDATA #REQUIRED>
+        <!ELEMENT description (#PCDATA)>
+]>
+-->
+
+<pokedex>
+    <pokemon numero="001">
+        <nom>Bulbizarre</nom>
+        <poids unite="kg">6,9</poids>
+        <tailles>
+            <taille unite="m">0,7</taille>
+        </tailles>
+        <types>
+            <type>Plante</type>
+            <type>Poison</type>
+        </types>
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" />
+        <description>
+            Bulbizarre passe son temps à faire la sieste sous le soleil. Il y a une graine sur son dos. Il absorbe les rayons du soleil pour faire doucement pousser la graine.
+        </description>
+    </pokemon>
+    <pokemon numero="004">
+        <nom>Salamèche</nom>
+        <poids unite="kg">6,9</poids>
+        <tailles>
+            <taille unite="m">0.6</taille>
+        </tailles>
+        <types>
+            <type>Feu</type>
+        </types>
+        <img src="salameche.png" />
+        <description>
+            La flamme qui brûle au bout de sa queue indique l'humeur de ce Pokémon. Elle
+            vacille lorsque Salamèche est content. En revanche, lorsqu'il s'énerve, la
+            flamme prend de l'importance et brûle plus ardemment.
+        </description>
+    </pokemon>
+    <pokemon numero="007">
+        <nom>Carapuce</nom>
+        <poids unite="kg">9,0</poids>
+        <tailles>
+            <taille unite="m">0,5</taille>
+            <taille unite="foot">1</taille>
+        </tailles>
+        <types>
+            <type>Eau</type>
+        </types>
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" />
+        <description>
+            La carapace de Carapuce ne sert pas qu'à le protéger. La forme ronde de sa carapace et ses rainures lui permettent d'améliorer son hydrodynamisme. Ce Pokémon nage extrêmement vite.
+        </description>
+    </pokemon>
+    <pokemon numero="007">
+        <nom>Pikachu</nom>
+        <poids unite="kg">6,0</poids>
+        <tailles>
+            <taille unite="m">0.4</taille>
+        </tailles>
+        <types>
+            <type>Electrique</type>
+        </types>
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" />
+        <description>
+            Chaque fois que Pikachu découvre quelque chose de nouveau, il envoie un arc électrique. Lorsqu'on tombe sur une Baie carbonisée, ça signifie sans doute qu'un de ces Pokémon a envoyé une charge trop forte.
+        </description>
+    </pokemon>
+</pokedex>

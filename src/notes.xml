@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<!DOCTYPE notes [
+        <!ELEMENT notes (note*)>
+        <!ATTLIST note date CDATA #REQUIRED>
+        <!ATTLIST note color (yellow|pink|cyan|green) #REQUIRED>
+        <!ELEMENT note (title, message, from, to, read?)>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT message (#PCDATA)>
+        <!ELEMENT from (#PCDATA)>
+        <!ELEMENT to (#PCDATA)>
+        <!ELEMENT read EMPTY>
+]>
+-->
+
+<notes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="notes.xsd">
+    <note date="2019-01-21" color="yellow">
+        <title>N'oublie pas !</title>
+        <message>Pense à sortir le chat...</message>
+        <from>Bob</from>
+        <to>Alice</to>
+        <read/>
+    </note>
+    <note date="2019-01-22" color="pink">
+        <title>Pas le temps</title>
+        <message>Fais le toi-même !</message>
+        <from>Alice</from>
+        <to>Bob</to>
+        <read/>
+    </note>
+    <note date="2019-01-22" color="cyan">
+        <title>Oops !</title>
+        <message>Ça marche plus...</message>
+        <from>Noob</from>
+        <to>Dev</to>
+    </note>
+</notes>

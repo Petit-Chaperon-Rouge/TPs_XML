@@ -1,0 +1,34 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="notes" type="t_notes" />
+
+    <xs:complexType name="t_notes">
+        <xs:sequence>
+            <xs:element name="note" type="t_note" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="t_note">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" />
+            <xs:element name="message" type="xs:string" />
+            <xs:element name="from" type="xs:string" />
+            <xs:element name="to" type="xs:string" />
+            <xs:element name="read" type="t_read" minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute name="color" type="t_color" />
+        <xs:attribute name="date" type="xs:date" />
+    </xs:complexType>
+
+    <xs:simpleType name="t_color">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="yellow" />
+            <xs:enumeration value="pink" />
+            <xs:enumeration value="cyan" />
+            <xs:enumeration value="green" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="t_read">
+        <xs:sequence />
+    </xs:complexType>
+</xs:schema>

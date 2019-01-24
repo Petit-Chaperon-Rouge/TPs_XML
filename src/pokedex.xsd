@@ -1,0 +1,55 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="pokedex" type="t_pokedex" />
+
+    <xs:complexType name="t_pokedex">
+        <xs:sequence>
+            <xs:element name="pokemon" type="t_pokemon" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="t_pokemon">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" />
+            <xs:element name="poids" type="xs:string" />
+            <xs:element name="tailles" type="t_tailles" />
+            <xs:element name="types" type="t_types" />
+            <xs:element name="img" type="t_img" />
+            <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="numero" type="t_numero" />
+    </xs:complexType>
+
+    <xs:complexType name="t_tailles">
+        <xs:sequence>
+            <xs:element name="taille" type="t_taille" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+        <xs:complexType name="t_taille">
+            <xs:attribute name="unite" type="t_unite" />
+        </xs:complexType>
+
+            <xs:simpleType name="t_unite">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="m" />
+                    <xs:enumeration value="foot" />
+                </xs:restriction>
+            </xs:simpleType>
+
+    <xs:complexType name="t_types">
+        <xs:sequence>
+            <xs:element name="type" type="xs:string" maxOccurs="2" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="t_img">
+        <xs:sequence />
+        <xs:attribute name="src" type="xs:string" />
+    </xs:complexType>
+
+    <xs:simpleType name="t_numero">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
