@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <style>
+            .container {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            span {
+                background-color: #999;
+            }
+
+            textarea {
+                width: 100%;
+            }
+
+            #out_result {
+                width: 100%;
+            }
+        </style>
+
+<div class="container">
+        <h1>XPath - JS</h1>
+        <hr>
+
+        <h2>Document XML</h2>
+        <h3>Code source</h3>
+        <textarea id="xml"></textarea>
+
+        <h3>Inspection rapide</h3>
+        <p>Le document traite de <span id="out_root"></span></p>
+        <p>Il contient <span id="out_count"></span> <span id="out_children"></span></p>
+
+        <hr>
+
+        <h2>Expression XPath</h2>
+        <h3>Expression</h3>
+        <textarea id="xpath"></textarea>
+
+        <h3>Résultat</h3>
+        <span id="out_result"></span>
+</div>
+        <script>
+            // inputs
+            const xml = document.querySelector('#xml');
+            const xpath = document.querySelector('#xpath');
+
+            // outputs
+            const out_root = document.querySelector('#out_root');
+            const out_count = document.querySelector('#out_count');
+            const out_children = document.querySelector('#out_children');
+            const out_result = document.querySelector('#out_result');
+
+            // parser
+            const parser = new DOMParser();
+            let xmldoc;
+
+
+
+            xml.onkeyup = function() {
+                xmldoc = parser.parseFromString(this.value, 'text/xml')
+                out_root.innerHTML = xmldoc.documentElement.tagName;
+                out_count.innerHTML = xmldoc.documentElement.childElementCount.toString();
+                out_children.innerHTML = xmldoc.documentElement.children[0].tagName;
+            };
+
+            xpath.onkeyup = function () {
+                const nodes = xmldoc.evaluate(this.value, xmldoc, null, XPathResult.ANY_TYPE, null);
+
+                let result = nodes.iterateNext();
+                let str = "";
+
+                while (result) {
+                    str += new XMLSerializer().serializeToString(result) + " ";
+                    result = nodes.iterateNext();
+                }
+                
+                out_result.innerHTML = str;
+            };
+
+        </script>
+    </body>
+</html>
