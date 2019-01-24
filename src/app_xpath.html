@@ -19,32 +19,39 @@
                 width: 100%;
             }
 
-            #out_result {
-                width: 100%;
+            .result-container {
+                width:100%;
+                background-color:#999;
+                padding: 5px 10px;
             }
         </style>
 
-<div class="container">
-        <h1>XPath - JS</h1>
-        <hr>
+        <div class="container">
+            <h1>XPath - JS</h1>
+            <hr>
 
-        <h2>Document XML</h2>
-        <h3>Code source</h3>
-        <textarea id="xml"></textarea>
+            <h2>Document XML</h2>
 
-        <h3>Inspection rapide</h3>
-        <p>Le document traite de <span id="out_root"></span></p>
-        <p>Il contient <span id="out_count"></span> <span id="out_children"></span></p>
+            <h3>Code source</h3>
+            <textarea id="xml" placeholder="Insérez votre XML"></textarea>
 
-        <hr>
+            <h3>Inspection rapide</h3>
+            <p>Le document traite de <span id="out_root"></span></p>
+            <p>Il contient <span id="out_count"></span> <span id="out_children"></span></p>
 
-        <h2>Expression XPath</h2>
-        <h3>Expression</h3>
-        <textarea id="xpath"></textarea>
+            <hr>
 
-        <h3>Résultat</h3>
-        <span id="out_result"></span>
-</div>
+            <h2>Expression XPath</h2>
+
+            <h3>Expression</h3>
+            <textarea id="xpath" placeholder="Que voulez-vous chercher ? ( notation XPath)"></textarea>
+
+            <h3>Résultat</h3>
+            <div class="result-container">
+                <p id="out_result"></p>
+            </div>
+
+        </div>
         <script>
             // inputs
             const xml = document.querySelector('#xml');
@@ -79,7 +86,7 @@
                     str += new XMLSerializer().serializeToString(result) + " ";
                     result = nodes.iterateNext();
                 }
-                
+
                 out_result.innerHTML = str;
             };
 
